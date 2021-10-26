@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>link demo</title>
+
+    <style>
+        li>a>img{
+            width: 125px;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+        li{
+            display: inline-block;
+            padding: 1rem 1.5rem;
+        }
+
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h3{
+            color:orchid;
+        }
+    </style>
+</head>
+<body>
+    <h2>HyperLink demo</h2>
+    <hr>
+    <h3>Internal Link (Relative Path)</h3>
+    <p>
+        <a href="#"><img src="../images/home_icon2.png" alt="hinh ngoi nha chu"></a> | 
+        <a href="d02_list.html" >List</a> | 
+        <a href="d02_list_css.html">List with CSS Style</a>
+    </p>
+
+    <hr>
+
+    <h3>External Link (Absolue Path)</h3>
+    <ul>
+        <li>
+            <a href="https://vnexpress.net/" target="_blank">
+            <img src="../images/vn-express.PNG" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.amazon.com/" target="_blank">
+                <img src="../images/amazon.PNG" alt="">
+            </a>
+        </li>
+    </ul>
+
+
+    <hr>
+    <h3>Email Link </h3>
+    <a href="mailto:abc@gmail.com?subject='HELP ME!'">Contact us, Click Me !</a>
+
+    <hr>
+    <h3>Other Content Type Link (for download) </h3>
+    <a href="../doc/BNGW Lab Guide 2.pdf">Lab guide for Hyperlink, here!</a>
+</body>
+</html>

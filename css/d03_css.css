@@ -1,0 +1,12 @@
+/*
+day la file css dinh nghia cac dinh dang duoc ap dung cho cac file html trong thu muc d03 
+*/
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: brown;
+    text-shadow: 3px 3px 3px gainsboro;
+
+    box-shadow: goldenrod 3px 3px 3px;
+    padding: 1rem;
+    background-color: antiquewhite;
+}

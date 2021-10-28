@@ -1,6 +1,8 @@
 /*
 day la file css dinh nghia cac dinh dang duoc ap dung cho cac file html trong thu muc d03 
 */
+
+/*type selector*/
 h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: brown;
@@ -9,4 +11,20 @@ h2{
     box-shadow: goldenrod 3px 3px 3px;
     padding: 1rem;
     background-color: antiquewhite;
+}
+
+/* class selector */
+.hot{
+    font-weight: bold;
+    font-size: 1.1em;
+    color: chocolate;
+}
+
+/*universal selector */
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none; /*tat dinh dang gach chan van ban*/
 }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo-class</title>
+    <link rel="stylesheet" href="../css/d03_css.css">
+
+    <style>
+        div#khoi1 {
+            background-color: salmon;
+            /* 
+            padding-top: 1em ;
+            padding-bottom: 2em;
+            padding-left: 3em;
+            padding-right: 4em; 
+            */
+
+            padding: 1em 4em 2em 3em;
+            text-align: center;
+
+            border-radius: 10px;
+        }
+
+        div#khoi1:hover {
+            background-color: seagreen;
+            color: seashell;
+        }
+
+        div#khoi1::first-letter {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 2em;
+        }
+
+        p {
+            display: none;
+            padding: 2em;
+            text-align: right;
+        }
+
+        div#khoi1:hover p {
+            display: block;
+            color: wheat;
+        }
+
+        div#khoi2{
+            border: green solid medium ;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        div#khoi3{
+            border: pink dotted thick ;
+
+        }
+
+        div#khoi4{
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border-top: gray dashed thin ;
+            border-bottom: brown inset thick;
+            text-align: right;
+            border-left: outset orange ;
+        }
+
+        div#khoi5{
+            padding: 1rem;
+        }
+        div#khoi5 img {
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Pseudo-class Demo</h2>
+    <hr>
+    <div id="khoi5">
+        <img src="../images/apple.png" alt=""> Apple : Eat Me !
+    </div>
+
+    <div style="text-indent: 2em;"  id="khoi2">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit molestiae totam itaque expedita, unde magni reiciendis recusandae veritatis vitae labore cum porro maxime atque! Ipsam eos enim minima tempora architecto.
+    </div>
+
+    <div style="padding-left: 2em; " id="khoi3">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit molestiae totam itaque expedita, unde magni reiciendis recusandae veritatis vitae labore cum porro maxime atque! Ipsam eos enim minima tempora architecto.
+    </div>
+
+    <div style="margin-left: 2em; " id="khoi4">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit molestiae totam itaque expedita, unde magni reiciendis recusandae veritatis vitae labore cum porro maxime atque! Ipsam eos enim minima tempora architecto.
+    </div>
+
+
+
+    <a href="d03_css_unit_vw.html">Go to Apple !</a> <br> <br>
+    <div id="khoi1">Hover Me
+        <p>Hello, I'm here ! :D </p>
+    </div>
+
+
+</body>
+
+</html>

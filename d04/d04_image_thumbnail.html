@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image-thumbnail</title>
+    <style>
+        h2{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: coral;
+        }
+        #tv{
+            position: relative;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1rem;
+        }
+        #tv ul{
+            list-style-type: none;
+            width: 450px;
+        }
+        #tv li{
+            display: inline;
+            float: left;
+            padding: 10px;
+        }
+        #tv span{
+            position: absolute;
+            top: 10px;
+            left: 500px;
+            display: none;
+        }
+
+        #tv li:hover span{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Vietnamese Foods Gallery - version 3
+    </h2>
+    <hr>
+
+    <div id="tv">
+        <!-- ul>li*6>img+span>img+p -->
+        <ul>
+            <li><img src="../images/vn-foods/small-image/Pho-Small.png" alt="Banh cuon">
+                <span>
+                    <img src="../images/vn-foods/Pho.png" alt=""><br>
+                    <p>Pho <br> Gia: 45.000 VND </p>
+                </span>
+            </li>
+            <li><img src="../images/vn-foods/small-image/Banh-Mi-Small.png" alt="">
+                <span>
+                    <img src="../images/vn-foods/Banh-Mi.png" alt=""><br>
+                    <p>Banh Mi <br> Gia: 25.000 VND</p>
+                </span>
+            </li>
+            <li><img src="../images/vn-foods/small-image/Bun-Bo-Hue-Small.png" alt="">
+                <span>
+                    <img src="../images/vn-foods/Bun-Bo-Hue.png" alt=""><br>
+                    <p>Bun bo <br> Gia: 40.000 VND</p>
+                </span>
+            </li>
+            <li><img src="../images/vn-foods/small-image/Ca-Phe-Sua-Da-Small.png" alt="">
+                <span>
+                    <img src="../images/vn-foods/Ca-Phe-Sua-Da.png" alt=""><br>
+                    <p>Ca phe <br> Gia: 20.000 VND</p>
+                </span>
+            </li>
+
+        </ul>
+
+    </div>
+</body>
+</html>

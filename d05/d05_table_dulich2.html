@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <style>
+        .data
+        {
+            text-align: center;
+        }
+
+        caption{
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: deepskyblue;
+        }
+
+        th{
+            color:lightcoral;
+        }
+
+        #bang-data{
+            border: lightcoral double medium;
+            box-shadow: lightgray 3px 3px 3px;
+        }
+        #bang-data td{
+            border: lightgrey thin solid;
+            padding: 0.2rem 0.5rem;
+        }
+        #bang-data th{
+            border: lightsalmon thin solid;
+            padding: 0.2rem 0.5rem;
+            background-color: linen;
+        }
+
+        #bang-hinh {
+            margin-top: 2rem;
+            max-width: 80%;
+            box-sizing: content-box;
+        }
+
+        .img-1 {
+            width: 95%;
+            height: auto;
+        }
+        .img-2{
+            width: 90%;
+            height: auto;          
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Table Demo - Merge Cell - version 2</h2>
+    <hr>
+    <table id="bang-data">
+        <caption>Report</caption>
+        <thead>
+            <tr>
+                <th colspan="2" rowspan="2">Result</th>
+                <th colspan="3">Range</th>
+            </tr>
+            <tr>
+                <th>18-20</th>
+                <th>20-50</th>
+                <th>Over 50</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th rowspan="3">Your favourite vacation destination</th>
+                <td>Dubai</td>
+                <td class="data">25%</td>
+                <td class="data">50%</td>
+                <td class="data">25%</td>
+            </tr>
+            <tr>
+                <td>Bangkok</td>
+                <td class="data">40%</td>
+                <td class="data">30%</td>
+                <td class="data">30%</td>
+            </tr>
+            <tr>
+                <td>Switzerland</td>
+                <td class="data">30%</td>
+                <td class="data">20%</td>
+                <td class="data">50%</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table id="bang-hinh">
+        <tr>
+            <td><img src="../images/dubal.png" alt="" class="img-1"></td>
+            <td><img src="../images/bangkok.png" alt="" class="img-1"></td>
+            <td><img src="../images/Switzerland.png" alt="" class="img-1"></td>
+        </tr>
+        <tr>
+            <td colspan="3" class="img-2">
+                <img src="../images/Landing_Vietnam.jpg" alt="">
+            </td>
+        </tr>
+    </table>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form-register</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+
+</head>
+<body>
+    <h2>HTML5 Form Demo</h2>
+    <hr>
+    <form action="d05_form_login2.html">
+        <fieldset>
+            <legend>Register New Member</legend>
+            <div>
+                <label for="">Username</label>
+                <input type="text" name="user" id="user"
+                required value="thanhsang">
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="password" name="pass" id="pass"
+                required value="123">
+            </div>
+            <div>
+                <label for="">Birthday</label>
+                <input type="date" name="dob" id="dob"
+                value="2003-11-27"
+                required>
+            </div>
+            <div>
+                <label for="">City</label>
+                <select name="city" id="city">
+                    <option value="SG">Saigon</option>
+                    <option value="HU">Hue</option>
+                    <option value="HN">Hanoi</option>
+                    <option value="CT" selected>Cantho</option>
+                    <option value="DN">Danang</option>
+                    <option value="HP">Haiphong</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Gender</label>
+                <input type="radio" name="gender" id="gender_male"
+                value="male" checked> Male
+                <input type="radio" name="gender" id="gender_female"
+                value="female"> Female
+                <input type="radio" name="gender" id="gender_other"
+                value="other"> Other
+            </div>
+            
+            <div>
+                <label for="">Favorite Language</label>
+                <input type="checkbox" name="lang_1" id="lang_1"
+                value="C/C++" checked> C/C++
+                <input type="checkbox" name="lang_2" id="lang_1"
+                value="Java" checked> Java
+                <input type="checkbox" name="lang_3" id="lang_1"
+                value="Python"> Python
+            </div>
+
+            <div>
+                <label for="">Rate</label>
+                <input type="number" name="rate" id="rate"
+                value="5" min="1" max="5"
+                required>
+            </div>
+            <div>
+                <label for="">Comment</label>
+                <textarea name="comment" id="comment" 
+                cols="30" rows="4">Nothing ...</textarea>
+            </div>
+
+        </fieldset>
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+
+
+    </form>
+
+</body>
+</html>

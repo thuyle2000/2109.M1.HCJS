@@ -1,0 +1,27 @@
+/* css dung chung cho cac form nhap lieu */
+form div{
+    margin: .5rem;
+}
+
+form label{
+    display: inline-block;
+    width: 6rem;
+}
+
+input[type="submit"]{
+    padding: .3rem 1rem;
+    background-color: red;
+    color: whitesmoke;
+    font-weight: bold;
+    border: gainsboro solid thin;
+    border-radius: 1rem;
+}
+
+input[type="reset"]{
+    padding: .3rem 1rem;
+    background-color: lightseagreen;
+    color: whitesmoke;
+    font-weight: bold;
+    border: gainsboro solid thin;
+    border-radius: 1rem;
+}

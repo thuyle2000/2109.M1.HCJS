@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>output</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+
+    <style>
+        output{
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>HTML5 Output Demo</h2>
+    <hr>
+    <h3>Hoa don diem tam</h3>
+
+
+    <form oninput="x.value=parseInt(sp.value)*parseInt(soluong.value); dg.value=sp.value;">
+
+        <div>
+            <label for="">Thuc don </label>
+            <select name="sp" id="sp" required>
+                <option value="">Chon mon</option>
+                <option value="40000">Ga ran</option>
+                <option value="35000">Banh gio</option>
+                <option value="55000">Xoi Hanoi</option>
+                <option value="55000">Banh duc Hanoi</option>
+                <option value="60000">Bun bo Hue</option>
+                <option value="40000">Com tam</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="">Don gia : </label>
+            <output name="dg" for="sp"></output>
+        </div>
+
+        <div>
+            <label for="">So luong</label>
+            <input type="number" name="soluong" id="soluong"
+            value="1" min="1" max="500"
+            required />
+        </div>
+        <div>
+            <label for="">Thanh tien : </label>
+            <output name="x" for="sp soluong"></output>
+            <br><br>
+        </div>
+    </form>
+
+    
+</body>
+
+</html>

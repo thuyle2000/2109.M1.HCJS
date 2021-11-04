@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login-js</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+
+</head>
+<body>
+    <h2>Javascript alert() demo</h2>
+    <hr>
+    <form action="../d05/d05_table_dulich2.html" id="form-login">
+        <fieldset>
+            <legend>Login</legend> 
+            <div>
+                <label for="">Username</label>
+                <input type="text" name="user" id="user"
+                value="aptech"
+                required>
+            </div>
+    
+            <div>
+                <label for="">Password</label>
+                <input type="password" name="pass" id="pass" value="123"
+                required>
+            </div>
+
+        </fieldset>
+        
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+</body>
+
+<script>
+//lap trinh cho su kien bam nut submit cua form co id="form-login"
+document.getElementById("form-login").onsubmit=function(){
+    //lay gia tri cua o nhap username co id="user"
+    var user = document.getElementById("user").value;
+    //lay gia tri cua o nhap password co id="pass"
+    var pass = document.getElementById("pass").value;
+
+    //kiem tra username
+    if(user!="aptech"){
+        alert("Ten dang nhap ko dung, vui long nhap lai !!!");
+        document.getElementById("user").focus(); //nhay cursor ve o nhap user
+        return false;   //ko chuyen trang action
+    }
+
+
+    
+    //kiem tra password
+    if(pass!="123"){
+        alert("Mat ma dang nhap ko dung, vui long nhap lai !!!");
+        document.getElementById("pass").focus(); //nhay cursor ve o nhap pass
+        return false;   //ko chuyen trang action
+    }
+
+
+}
+
+</script>
+</html>

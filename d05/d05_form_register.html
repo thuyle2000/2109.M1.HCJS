@@ -12,25 +12,40 @@
 <body>
     <h2>HTML5 Form Demo</h2>
     <hr>
-    <form action="d05_form_login2.html">
+    <form action="d05_form_login2.html" method="get">
         <fieldset>
             <legend>Register New Member</legend>
             <div>
                 <label for="">Username</label>
                 <input type="text" name="user" id="user"
-                required value="thanhsang">
+                required placeholder="nhap ma tai khoan" autofocus>
             </div>
             <div>
                 <label for="">Password</label>
                 <input type="password" name="pass" id="pass"
                 required value="123">
             </div>
+
+            <div>
+                <label for="">Email</label>
+                <input type="email" name="email" id="email"
+                value="sang@gmail.com">
+            </div>
+
             <div>
                 <label for="">Birthday</label>
                 <input type="date" name="dob" id="dob"
-                value="2003-11-27"
+                value="2003-11-27" max="2006-01-01"
                 required>
             </div>
+
+            <div>
+                <label for="">Phone</label>
+                <input type="tel" name="phone" id="phone"
+                pattern="\d{2}-\d{7}">
+                <!-- \d:digit - ky so tu 0-9 , {2}, lap lai 2 lan -->
+            </div>
+
             <div>
                 <label for="">City</label>
                 <select name="city" id="city">
@@ -45,9 +60,9 @@
             <div>
                 <label for="">Gender</label>
                 <input type="radio" name="gender" id="gender_male"
-                value="male" checked> Male
+                value="male" > Male
                 <input type="radio" name="gender" id="gender_female"
-                value="female"> Female
+                value="female" checked> Female
                 <input type="radio" name="gender" id="gender_other"
                 value="other"> Other
             </div>
@@ -61,17 +76,22 @@
                 <input type="checkbox" name="lang_3" id="lang_1"
                 value="Python"> Python
             </div>
+            <div>
+                <label for="">Favorite color</label>
+                <input type="color" name="color" id="color"
+                value="#FF0000" >
+            </div>
 
             <div>
                 <label for="">Rate</label>
                 <input type="number" name="rate" id="rate"
                 value="5" min="1" max="5"
-                required>
+                required />
             </div>
             <div>
                 <label for="">Comment</label>
                 <textarea name="comment" id="comment" 
-                cols="30" rows="4">Nothing ...</textarea>
+                cols="30" rows="4" placeholder="Input your comments"></textarea>
             </div>
 
         </fieldset>
@@ -85,3 +105,4 @@
 
 </body>
 </html>
+

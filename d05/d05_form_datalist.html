@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datalist</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+    <h2>HTML5 DataList Demo</h2>
+    <hr>
+    <h3>Chon noi ban muon di du lich : </h3>
+    <form action="d05_table_dulich2.html">
+
+        <select name="city2" id="city2">
+            <option value="SG">Bangkok</option>
+            <option value="HU">Dubai</option>
+            <option value="HN">Switzerland</option>
+            <option value="CT">Vietnam</option>
+        </select>
+
+        <input list="location" name="city" id="city">
+        <datalist id="location">
+            <option value="Bangkok">
+            <option value="Dubai">
+            <option value="Switzerland">
+            <option value="Vietnam">
+        </datalist>
+        <input type="submit">
+    </form>
+</body>
+
+</html>

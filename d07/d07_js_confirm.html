@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirm</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <h2>Javascript confirm() Demo</h2>
+    <hr>
+    <button id="btnClickMe">Click Me</button>
+</body>
+<script>
+    document.getElementById("btnClickMe").onclick = function(){
+        let kq= confirm("Are you sure to want closing this page ?");
+        // kq = true, neu visitor chon [OK], nguoc lai kq=false
+        // console.log("kq =" + kq);
+        if(kq==true){
+            window.close(); //dong trang web hien tai
+        }
+    }
+</script>
+</html>

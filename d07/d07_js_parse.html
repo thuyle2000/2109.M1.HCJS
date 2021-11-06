@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parseInt</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+    <h2>Javascript parseInt() Demo</h2>
+    <hr>
+
+    <form action="">
+        <div>
+            <label for="">input n1</label>
+            <input type="number" name="n1" id="n1" value="5" min="0">
+        </div>
+        <div>
+            <label for="">input n2</label>
+            <input type="number" name="n2" id="n2" value="3" min="0">
+        </div>
+        <div>
+            <label for="">result</label>
+            <input type="number" name="n3" id="n3" readonly>
+        </div>
+
+        <button id="btnAdd" type="button"> + </button>
+        <button id="btnSub" type="button"> - </button>
+        <button id="btnPro" type="button"> * </button>
+        <button id="btnDiv" type="button"> / </button>
+    </form>
+
+</body>
+<script>
+    //lap trinh cho su kien click tren nut cong
+    document.getElementById("btnAdd").onclick = function (e) {
+        //lay du lieu nhap trong o n1 va n2
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+        document.getElementById("n3").value = parseInt(n1) + parseInt(n2);
+    }
+
+    //lap trinh cho su kien click tren nut tru
+    document.getElementById("btnSub").onclick = function () {
+        //lay du lieu nhap trong o n1 va n2
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+
+        // document.getElementById("n3").value = parseInt(n1) - parseInt(n2);
+        document.getElementById("n3").value = n1- n2;
+    }
+
+    //lap trinh cho su kien click tren nut chia
+    document.getElementById("btnDiv").onclick = function () {
+        //lay du lieu nhap trong o n1 va n2
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+
+        // document.getElementById("n3").value = parseInt(n1) - parseInt(n2);
+        document.getElementById("n3").value = n1 / n2;
+    }
+
+
+     //lap trinh cho su kien click tren nut nhan
+     document.getElementById("btnPro").onclick = function () {
+        //lay du lieu nhap trong o n1 va n2
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+
+        // document.getElementById("n3").value = parseInt(n1) * parseInt(n2);
+        document.getElementById("n3").value =  n1 * n2;
+    }
+
+
+</script>
+
+</html>

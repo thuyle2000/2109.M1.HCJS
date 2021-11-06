@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse event</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <style>
+        #hinh{
+            width: 60%;
+        }
+    </style>
+    
+</head>
+<body>
+    <h2>Mouse event demo</h2>
+    <hr>
+    <img src="../images/dubal.png" alt="" id="hinh" title="di du lich, thoi nao !">
+</body>
+
+<script>
+    //lap trinh cho su kien di chuyen mouse vo buc hinh
+    document.getElementById("hinh").onmouseenter= function(){
+        this.src="../images/Switzerland.png";
+    }
+
+    //lap trinh cho su kien di chuyen mouse ra khoi buc hinh
+    document.getElementById("hinh").onmouseout=function(){
+        this.src="../images/dubal.png";
+    }
+</script>
+</html>

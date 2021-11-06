@@ -20,6 +20,10 @@
     
     <h3>typeof Operator</h3>
     <p id="p3"></p>   
+    <hr>
+    
+    <h3>Conditional Operator (?:)</h3>
+    <p id="p4"></p>   
 
 </body>
 
@@ -46,6 +50,8 @@
     r4 += `typeof(b) = ${typeof(b)} <br>`;
     document.getElementById("p3").innerHTML = r4; 
 
+    let min = x<y?x:y;
+    document.getElementById("p4").innerHTML = `min(${x},${y}) =${min}`; 
 
 </script>
 </html>

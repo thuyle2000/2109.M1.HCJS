@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operators</title>
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <h2>Special Operator</h2>
+    <hr>
+    <h3>Bitwise Logical Operators</h3>
+    <p id="p1"></p>
+    <hr>
+
+    <h3>Comma Operator</h3>
+    <p id="p2"></p>
+    <hr>
+    
+    <h3>typeof Operator</h3>
+    <p id="p3"></p>   
+
+</body>
+
+
+<script>
+    let x = 56, y = 28;
+    // let r1 = x + " and " + y + " = " + (x&y);
+    let r2 = ` ${x} and ${y} = ${x&y} <br>`;
+    r2 += ` ${x} or ${y} = ${x|y} <br>`;
+    r2 += ` ${x} xor ${y} = ${x^y} `;
+    document.getElementById("p1").innerHTML = r2; 
+
+    let z=(x=12, y=x+5);
+    let r3 = `x= ${x}; z=(x=12, y=x+5) => z =${z}`;
+    document.getElementById("p2").innerHTML = r3; 
+
+    let yesno = false;
+    let a;
+    let b =null;
+    let r4 = `typeof(r3) = ${typeof(r3)} <br>`;
+    r4 += `typeof(x) = ${typeof(x)} <br>`;
+    r4 += `typeof(yesno) = ${typeof(yesno)} <br>`;
+    r4 += `typeof(a) = ${typeof(a)} <br>`;
+    r4 += `typeof(b) = ${typeof(b)} <br>`;
+    document.getElementById("p3").innerHTML = r4; 
+
+
+</script>
+</html>

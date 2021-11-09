@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>do-while</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <style>
+        form label {
+            display: inline-block;
+            width: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>Javascript dowhile-loop Demo</h2>
+    <hr>
+    <p>Thu do cua Vietnam la Thanh pho nao ? </p>
+    <button type="button" id="ans">Tra loi</button> 
+    <p id='message'></p>
+
+
+    <script>
+        //lap trinh cho su kien bam nut co id = 'ans'
+        document.getElementById("ans").onclick=function(e){
+            let yourAns = ''; //bien chua cau tra loi cua nguoi choi
+
+            let r = /^hanoi$/i;  //cau tra loi dung
+            do{
+                yourAns = prompt("Your answer is ", yourAns);
+                if(yourAns == null){
+                    //nguoi choi bam [cancel]
+                    return;
+                }
+
+                if(r.test(yourAns)) {
+                    break;
+                }
+
+                yourAns = '';
+            }while (true);
+
+            //neu nguoi choi tra loi dung, xuat thong bao chuc mung
+            let mess = `Thu do cua Vietnam la <b>${yourAns}</b>. <br>`;
+            mess += `Chuc mung ban da tra loi chinh xac !`;
+
+            document.getElementById("message").innerHTML=mess;
+            
+        }
+    </script>
+</body>
+</html>

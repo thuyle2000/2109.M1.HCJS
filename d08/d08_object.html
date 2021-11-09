@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <h2>Javascript Object demo</h2>
+    <hr>
+    <h3>Direct Method</h3>
+    <div id = 'd1'>
+
+    </div>
+
+    <h3>Template Method</h3>
+    <div id = 'd2'></div>
+
+    <script>
+        //1. tao 1 doi tuong SinhVien bang phuong phap truc tiep
+        let sinhvien = new Object();
+        sinhvien.name = 'Nguyen Anh Vu';
+        sinhvien.email = "anhvunguyen@gmail.com";
+        sinhvien.mark = 100;
+        //1a. in thong tin doi tuong sinhvien trong khoi 'd1'
+        let s1 = `${sinhvien.name}, ${sinhvien.email}, ${sinhvien.mark}`;
+        document.getElementById('d1').innerHTML=s1;
+
+
+        //2. tao doi tuong bang phuong phap template
+        //2a. tao kieu doi tuong NhanVien bang function
+        function NhanVien(maso, ten, luongCB){
+            //dinh nghia cac thuoc tinh cua kieu du lieu NhanVien
+            this.id = maso;
+            this.name = ten;
+            this.salary = luongCB;
+
+            //dinh nghia phuong thuc output(), tra ve chuoi mo ta thong tin NV
+            this.output = function(){
+                let s = `id: ${this.id}, Ten NV: ${this.name}, Luong CB: ${this.salary}`;
+                return s;
+            }
+        } 
+        //2b. tao 1 bien doi tuong nv kieu NhanVien
+        let nv = new NhanVien('NV01','Nguyen Phat Tai', 2800);
+
+        //2c. in thong tin nhan vien trong khoi 'd2'
+        document.getElementById('d2').innerHTML = nv.output();
+
+
+    </script>
+</body>
+
+</html>

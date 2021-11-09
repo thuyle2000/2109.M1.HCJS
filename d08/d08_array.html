@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <style>
+        form label {
+            display: inline-block;
+            width: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>Javascript Array Object demo</h2>
+    <hr>
+    <form action="" id="form-flower">
+        <div>
+            <label for="">input new flower (*)</label>
+            <input type="text" name="flower" id="flower" required
+            value="hong" >
+        </div>
+
+        <button type="button" id="add">Add</button>
+        <button type="button" id="list">Display</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        let ds = []; //khai bao 1 mang ten 'ds' de chua ten cac loai hoa
+
+        //lap trinh cho su kien click tren button co id='add'
+        document.getElementById("add").onclick = function(){
+            //lay du lieu nhap trong o co id='flower'
+            let flower = document.getElementById('flower').value;
+
+            if(flower.trim().length==0){
+                alert('vui long nhap ten loai hoa moi !');
+                document.getElementById('flower').focus();
+                return;
+            }
+
+            ds.push(flower);  //dua ten hoa moi nhap vo cuoi mang 'ds'
+
+            //xuat thong bao trong khoi co id='result'
+            let s = `<p>Total of flowers is ${ds.length}. </p>`;
+            document.getElementById("result").innerHTML = s;
+        }
+
+        //lap trinh cho su kien click tren button co id='display'
+        document.getElementById('list').onclick= function(){
+            let s1 = `<h3>Danh sach cac loai hoa </h3>`;
+
+            let s2 = ds.join(' - '); //noi cac pt trong mang lai voi nhau, dc phan cach bang dau ' - ' vao tao thanh 1 chuoi , luu vo bien s
+
+            let s3 = ds.sort().join(' : ');
+
+            document.getElementById("result").innerHTML = `${s1} ${s2}<br> ${s3}`;
+        }
+
+    </script>
+</body>
+</html>

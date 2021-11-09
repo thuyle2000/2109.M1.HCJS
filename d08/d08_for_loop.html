@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-loop</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <style>
+        form label {
+            display: inline-block;
+            width: 10rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Javascript for-loop Demo</h2>
+    <hr>
+    <form action="" id="form-bcc" name="form-bcc">
+        <div>
+            <label for="">Input number [2-20]</label>
+            <input type="number" name="n" id="n" value="9" min="2" max="20">
+        </div>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <div id="bcc">
+
+    </div>
+
+    <script>
+        //lap trinh cho su kien bam nut submit cua form co id = 'form-bcc'
+        document.getElementById("form-bcc").onsubmit = function (e) {
+            e.preventDefault(); //vo hieu hoa chuc nang submit
+
+            //lay gia tri nhap trong o input co id="n"
+            let n = document.getElementById("n").value;
+
+            let s = `<h3> Bang Cuu Chuong ${n}</h3> <hr/>`;
+            for (let i = 1; i <= 10; i++) {
+                s += `${n} * ${i} = ${n * i} <br/>`; // 5 * 1 = 5, 5 * 2 =10
+            }
+
+            //dat gia tri cua chuoi s vo khoi div co id='bcc'
+            // document.getElementById("bcc").innerText = s;
+            document.getElementById("bcc").innerHTML = s;
+        }
+    </script>
+</body>
+
+</html>

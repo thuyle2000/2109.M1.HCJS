@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-in</title>
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <h2>Javascript for-in loop demo (version 2)</h2>
+    <hr>
+    <div id='result'></div>
+</body>
+<script>
+    window.onload=function(){
+        let ds=['Lap trinh C','Thiet ke Web','Lap trinh Angular','eProject','Quan tri CSDL'];
+
+        let s = [`<h3>Danh sach cac mon hoc</h3>`];
+        s.push(`<ul>`)
+
+        for (const i in ds) {
+            s.push(`<li> ${ds[i]} </li>`);
+        }
+        s.push(`</ul>`);
+
+        //dua noi dung bien s vo khoi co id='result'
+        document.getElementById('result').innerHTML = s.join("");
+    }
+</script>
+</html>

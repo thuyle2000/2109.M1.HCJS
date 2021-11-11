@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window-ojbect</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <h2>javascript window object demo</h2>
+    <hr>
+    <form action="" id="form-DK">
+        <fieldset>
+            <legend>Dang ky Thanh Vien</legend>
+            <div>
+                <label for="">Ho ten</label>
+                <input type="text" name="name" id="name" required value="Dang Quoc Thai">
+            </div>
+
+            <div>
+                <label for="">Email</label>
+                <input type="email" name="email" id="email" required value="thaiDQ@fpt.edu.vn">
+            </div>
+
+            <div>
+                <label for="">Ngay sinh</label>
+                <input type="date" name="dob" id="dob" required value="2003-04-25">
+            </div>
+
+        </fieldset>
+        <div>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </div>
+
+        <textarea name="summary" id="summary" cols="60" rows="5" readonly></textarea>
+
+    </form>
+    <script>
+        document.getElementById("form-DK").onsubmit= function(e){
+            e.preventDefault();
+
+            //lay du lieu nhap tren form
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let dob = document.getElementById("dob").value;
+
+            //tao 1 mang chua thong tin dang ky cua thanh vien moi
+            let a=[" Thong tin dang ky"];
+            a.push(` - Ho ten : ${name}`);
+            a.push(` - Email : ${email}`);
+            a.push(` - Ngay sinh : ${dob}`);
+
+            //1. dua du lieu dang ky trong mang a, vo o text-area co id="summary"
+            document.getElementById("summary").value = a.join("\n");
+
+            //2. dua du lieu dang ky trong mang a, vo 1 hop thong bao
+            alert(a.join("\n"));
+
+            //3. dua du lieu dang ky trong mang a, hien ra trong 1 tab window moi tren trinh duyet
+            let new_tab = window.open();
+            new_tab.document.write("<pre>");
+            new_tab.document.writeln(a.join("\n"));
+            new_tab.document.write("</pre>");
+        }
+    </script>
+</body>
+</html>

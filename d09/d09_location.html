@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location-object</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <h2>Javascript location object demo</h2>
+    <hr>
+    <h3>Build-in Javascript Object</h3>
+    <button type="button" id="date" onclick="load_page('d09_date.html')"> Date </button>
+    <button type="button" id="string" onclick="load_page('d09_string.html')"> String </button>
+    <button type="button" id="math" onclick="load_page('d09_math.html')"> Math </button>
+
+    <script>
+        function load_page(page_name){
+            location.href = page_name;
+        }
+    </script>
+</body>
+</html>

@@ -11,7 +11,7 @@ form{
 
 form label{
     display: inline-block;
-    width: 6rem;
+    width: 10rem;
 }
 
 input[type="submit"]{

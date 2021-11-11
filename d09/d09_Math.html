@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math-object</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+
+</head>
+<body>
+    <h2>Javascript Math Demo</h2>
+    <hr>
+    <form action="" id="form-math">
+        <div>
+            <label for="">Nhap 1 so bat ky: </label>
+            <input type="text" name="num" id="num" required value="17.789">
+        </div>
+        <div>
+            <input type="submit" value="Test">
+            <input type="reset" value="Reset">
+        </div>
+
+        <textarea name="result" id="result" cols="50" rows="10" readonly></textarea>
+    </form>
+
+    <script>
+        document.getElementById("form-math").onsubmit = function(e){
+            e.preventDefault(); // vo hieu hoa viec chuyen dieu khien len web-server
+
+            //lay du lieu nhap trong o co id = "num"
+            let num = document.getElementById("num").value;
+
+            if(isNaN(num)){
+                alert("Vui long nhap 1 so bat ky !!!");
+                document.getElementById("num").focus();
+                return;
+            }
+
+            num = parseFloat(num);  //doi bien num -> kieu float
+
+            let sonn = Math.random(); //tao so ngau nhien bat ky co gia tri tu [0,1]
+            let sonn_0_100 = Math.round(sonn*100);
+            let sonn_0_25 = Math.round(sonn*25);
+            let sonn_40_60 = 40 + Math.round(sonn*20);
+
+            let a = [];
+            a.push(`- Math.ceil(num) = ${Math.ceil(num)} `);    //so tran
+            a.push(`- Math.floor(num) = ${Math.floor(num)} `);  //so san
+            a.push(`- Math.round(num) = ${Math.round(num)} `);  //so lam tron
+            a.push(`- Math.sqrt(num) = ${Math.sqrt(num)} `);  //so lam tron
+            a.push(`* * * * * * * * * `);
+            a.push(`- Math.random() = ${sonn}`);
+            a.push(`- So ngau nhien tu [0,100] = ${sonn_0_100}`);
+            a.push(`- So ngau nhien tu [0,25] = ${sonn_0_25}`);
+            a.push(`- So ngau nhien tu [40,60] = ${sonn_40_60}`);
+
+            //xuat bien a vo o co id="result"
+            document.getElementById("result").value = a.join("\n");
+        }
+    </script>
+</body>
+</html>

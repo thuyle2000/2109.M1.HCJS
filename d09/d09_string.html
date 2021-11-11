@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <style>
+        form label {
+            width: 10rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Javascript String Demo</h2>
+    <hr>
+    <form action="" id="form-string">
+        <fieldset>
+            <legend>string demo</legend>
+            <div>
+                <label for="">nhap chuoi thu 1 : </label>
+                <input type="text" name="s1" id="s1" required value="Le Thanh Sang">
+            </div>
+
+            <div>
+                <label for="">nhap chuoi thu 2 : </label>
+                <input type="text" name="s2" id="s2" required value="an">
+            </div>
+
+            <div>
+                <label for="">nhap chuoi thu 3 : </label>
+                <input type="text" name="s3" id="s3" required value="on">
+            </div>
+
+            <div>
+                <label for="">nhap vi tri : </label>
+                <input type="number" name="index" id="index" required value="0" min="0">
+            </div>
+
+        </fieldset>
+        <div>
+            <input type="submit" value="Dong y">
+            <input type="reset" value="Lam lai">
+        </div>
+    </form>
+    <div id="result">
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <p id="p6"></p>
+        <p id="p7"></p>
+        <p id="p8"></p>
+        <p id="p9"></p>
+    </div>
+
+    <!-- lap trinh javascript -->
+    <script>
+        document.getElementById("form-string").onsubmit = function (e) {
+            e.preventDefault();  //vo hieu hoa viec chuyen du lieu len web-server(chuyen trang action)
+
+            //lay du dieu nhap trong o co id='s1' va 's2', 's3'
+            let s1 = new String(document.getElementById("s1").value.trim());
+            let s2 = new String(document.getElementById("s2").value.trim());
+            let s3 = new String(document.getElementById("s3").value.trim());
+
+            //dem so ky tu trong 1 chuoi
+            let p1 = s1.length;
+            document.getElementById("p1").innerHTML = `- Tong so ky tu trong chuoi 1: ${p1}`;
+
+            //tra ve ky tu tai vi tri index
+            let index = parseInt(document.getElementById("index").value);
+            document.getElementById("p2").innerHTML = `- Ky tu trong chuoi 1 tai vi tri index ${index}: ${s1.charAt(index)}`;
+
+            //tim kiem dau chuoi
+            let vitri_1 = s1.indexOf(s2);
+            document.getElementById("p3").innerHTML = `- Chuoi 2 xuat hien tai vi tri [${vitri_1}] trong chuoi 1`;
+
+            //tim kiem cuoi chuoi
+            let vitri_2 = s1.lastIndexOf(s2);
+            document.getElementById("p4").innerHTML = `- Chuoi 2 xuat hien tai vi tri [${vitri_2}] trong chuoi 1 (tinh tu cuoi chuoi 1)`;
+
+            //tim tat ca cac chuoi 2 trong chuoi 1 va thay the bang chuoi 3
+            let re = new RegExp(s2, "gi");  //g: global , i:ignore cases
+            let new_s = s1.replace(re, s3);
+            document.getElementById("p5").innerHTML = `- Chuoi 1 sau khi thay the: ${new_s}`;
+
+            //tach chuoi s1 thanh cac chuoi chuoi con (dc phan cach bang khoang trang) va luu vo array
+            let a = s1.split(" ");
+            document.getElementById("p6").innerHTML = `- Cac chuoi con trong chuoi 1: ${a}`;  //a[0] = last name, a[length-1] = first name
+
+
+            //trich chuoi con
+            let child_s = s1.substr(vitri_1);
+            document.getElementById("p7").innerHTML = `- Chuoi con duoc trich ra tu chuoi 1: ${child_s}`;
+
+
+            //doi cac ky tu trong chuoi thanh chu in hoa
+            let upper_s = s1.toUpperCase();
+            document.getElementById("p8").innerHTML = `- Chuoi 1 (in hoa): ${upper_s}`;
+
+            
+            //doi cac ky tu trong chuoi thanh chu in thuong
+            let lower_s = s1.toLowerCase();
+            document.getElementById("p9").innerHTML = `- Chuoi 1 (in thuong): ${lower_s}`;
+
+        }
+    </script>
+</body>
+
+</html>

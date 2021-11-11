@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date-object</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+    <h2>Javascript Date object Demo</h2>
+    <hr>
+    <form action="" id="form-date">
+        <div>
+            <label for="">Nhap ho ten</label>
+            <input type="text" name="name" id="name" required value="Pham Nhat Minh">
+        </div>
+        <div>
+            <label for="">Nhap ngay sinh</label>
+            <input type="date" name="dob" id="dob" value="2003-10-15" required>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+
+        <textarea name="result" id="result" cols="50" rows="5" readonly></textarea>
+    </form>
+
+    <script>
+        document.getElementById("form-date").onsubmit = function (e) {
+            e.preventDefault(); //vo hieu hoa viec chuyen du lieu len web-server
+
+            //lay du lieu nhap trong o ho ten va ngay sinh
+            let name = document.getElementById("name").value.trim();
+            let dob = document.getElementById("dob").value;
+
+            let a=[];
+            
+            let date_dob = new Date(dob);  //doi chuoi dob -> kieu Date()
+            a.push(`- getDate() =  ${date_dob.getDate()}`);     //ngay trong thang [1-31]
+            a.push(`- getDay() =  ${date_dob.getDay()}`);       //ngay thu tu trong tuan [0-6], 0: thu 2
+            a.push(`- getMonth() =  ${date_dob.getMonth()}`);   //thang [0-11]
+            a.push(`- getFullYear() =  ${date_dob.getFullYear()}`); //nam 4 so
+            a.push(`- getYear() =  ${date_dob.getYear()}`);         //nam 2 so
+
+            document.getElementById("result").innerHTML = a.join("\n");
+
+            //tinh tuoi cua thanh vien moi
+            //1. lay nam sinh cua thanh vien
+            let year = date_dob.getFullYear();
+            //2. lay nam hien hanh
+            let current_year = new Date().getFullYear();
+            //3. tinh tuoi
+            let age = current_year - year;
+            if(age<15 || age>30){
+                alert("Do tuoi cua ban ko phu hop de tham gia cau lac bo cua chung toi !");
+                return;
+            }
+            alert(`Chao mung ${name}, ban da gia nhap vo cau lac bo cua chung toi! `);
+        }
+    </script>
+</body>
+
+</html>

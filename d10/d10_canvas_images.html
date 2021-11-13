@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas-image</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <style>
+        canvas {
+            background-color: ivory;
+            border: khaki groove medium;
+            box-shadow: lavender 3px 3px 3px;
+            float: left;
+        }
+
+        #div-form {
+            float: left;
+            margin-left: 10px;
+        }
+
+        #gallary img {
+            width: 120px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Canvas Demo - Draw Images</h2>
+    <hr>
+
+    <canvas width="700" height="500" id="bangve">
+
+    </canvas>
+
+    <div id="div-form">
+        <div id="gallary">
+            <img src="../images/dubal.png" alt="" id="pic1" onclick="drawPic('pic1')">
+            <img src="../images/bangkok.png" alt="" id="pic2" onclick="drawPic('pic2')">
+            <img src="../images/Switzerland.png" alt="" id="pic3" onclick="drawPic('pic3')">
+        </div>
+        <form action="">
+            <div>
+                <label for="">chon mau: </label>
+                <input type="color" name="color" id="color" value="#FF0000">
+            </div>
+
+            <div>
+                <label for="">chon hinh</label>
+                <select name="hinh" id="hinh">
+                    <option value="pic1">Dubai</option>
+                    <option value="pic2">Bangkok</option>
+                    <option value="pic3">Switzeland</option>
+                </select>
+            </div>
+
+        </form>
+    </div>
+    <script>
+        //lay element canvas co id ='bangve'
+        let bangve = document.getElementById('bangve');
+
+        //tao doi tuong context
+        let ctx = bangve.getContext("2d");
+        ctx.font = "36px Geoger";
+        ctx.strokeStyle = document.getElementById("color").value;
+        ctx.strokeText("Welcome to Canvas", 10, 450);
+
+        //lap trinh cho su kien change/click cua o select co id="hinh"
+        document.getElementById("hinh").onchange = function () {
+            ctx.beginPath();
+
+            //lay dong pic duoc chon trong o select
+            let pic = document.getElementById("hinh").value;
+
+            //lay doi tuong image co id tuong ung
+            let img = document.getElementById(pic);
+
+            //ve hinh trong khung canvas
+            ctx.drawImage(img, 10, 10);
+
+        }
+
+
+        //lap trinh cho su kien doi mau
+        document.getElementById("color").onchange = function () {
+            ctx.strokeStyle = document.getElementById("color").value;
+            ctx.strokeText("Welcome to Canvas", 10, 450);
+        }
+
+        function drawPic(pic) {
+            ctx.beginPath();
+
+            //lay doi tuong image co id=pic tuong ung
+            let img = document.getElementById(pic);
+
+            //ve hinh trong khung canvas
+            ctx.drawImage(img, 10, 10);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

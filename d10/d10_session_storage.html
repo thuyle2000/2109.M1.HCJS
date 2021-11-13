@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>session-storage</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <h2>HTML5 Session-Storage Demo</h2>
+    <hr>
+    <form action="d10_canvas_images.html" id="form-login">
+        <fieldset>
+            <legend>Login</legend>
+            <div>
+                <label for="">email</label>
+                <input type="email" name="email" id="email" value="minhanh@fpt.edu.vn" required>
+            </div>
+
+           <div>
+                <label for="">password</label>
+                <input type="password" name="pass" id="pass" value="123" required>
+            </div>
+        </fieldset>
+        <br>
+
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
+
+    <script>
+        //lap trinh cho su kien submit cua form login
+        document.getElementById("form-login").onsubmit = function(e){
+            //lay du lieu nhap trong 2 o email va password
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("pass").value;
+
+            if(email=="minhanh@fpt.edu.vn" && pass=="123"){
+                //luu tk hop le vo bien session-storage
+                sessionStorage.setItem("uid",email);
+                sessionStorage.setItem("pwd",pass);
+                return;
+            }
+            else{
+                alert("TK ko hop le. vui long thu lai !");
+                document.getElementById("email").focus();
+                return false;  // ko chuyen trang action !
+            }
+
+        }
+    </script>
+</body>
+</html>

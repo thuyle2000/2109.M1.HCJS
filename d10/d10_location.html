@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+    <p>Nhấn vào nút dưới đây để lấy tọa độ của bạn.</p>
+    <button onclick="getLocation()" type="button">Định vị</button>
+    <h4 id="demo"></h3>
+</body>
+
+</html>
+
+<script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Trình duyệt của bạn không hỗ trợ Geolocation.";
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML = "Vĩ độ: " + position.coords.latitude +
+            "<br>Kinh độ: " + position.coords.longitude;
+    }
+</script>

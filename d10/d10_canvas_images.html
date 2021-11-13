@@ -30,6 +30,7 @@
 
 <body>
     <h2>Canvas Demo - Draw Images</h2>
+    <p id="welcome"></p>
     <hr>
 
     <canvas width="700" height="500" id="bangve">
@@ -60,6 +61,13 @@
         </form>
     </div>
     <script>
+        //lay du lieu uid va pwd trong bien session storage
+        if(sessionStorage.getItem("uid")!=null){
+            document.getElementById("welcome").innerHTML=`Hello, Mr/Ms.<b>${sessionStorage.getItem("uid")}</b>`;
+        }
+
+
+
         //lay element canvas co id ='bangve'
         let bangve = document.getElementById('bangve');
 

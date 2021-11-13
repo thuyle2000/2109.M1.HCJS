@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+    <h2>JQuery Demo</h2>
+    <hr>
+    <button type="button" id="btn-hide">hide</button>
+    <button type="button" id="btn-show">show</button>
+    <button type="button" id="btn-click">click me</button>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis, officiis praesentium repellat nobis
+        excepturi itaque iure, rerum officia quibusdam exercitationem? Ducimus dolorum veniam tempore atque nulla fuga
+        laborum quod.
+    </p>
+
+    <p>
+        demo paragraph
+    </p>
+</body>
+
+<script>
+    //lap trinh su kien click tren button [btn-hide] theo jquery
+    $("#btn-hide").click(function () {
+        $("p").hide();  //an noi dung cua tat ca cac the p tren trang web
+    });
+
+    //lap trinh su kien click tren button [btn-show] theo jquery
+    $("#btn-show").click(function () {
+        $("p").show();  //hien noi dung cua tat ca cac the p tren trang web
+    });
+
+    //lap trinh su kien click tren button [btn-click] theo jquery
+    $("#btn-click").click(function () {
+        $("p").toggle();  //an/hien noi dung cua tat ca cac the p tren trang web
+    });
+</script>
+
+</html>

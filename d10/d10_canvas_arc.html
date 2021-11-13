@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas-arc</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <style>
+        canvas {
+            background-color: ivory;
+            border: khaki groove medium;
+            box-shadow: lavender 3px 3px 3px;
+            float: left;
+        }
+
+        #div-form {
+            float: left;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Canvas Demo - Draw Arc</h2>
+    <hr>
+    <canvas width="700" height="500" id="bangve">
+
+    </canvas>
+
+    <div id="div-form">
+        <form action="">
+            <div>
+                <label for="">chon mau: </label>
+                <input type="color" name="color" id="color" value="#FF0000">
+            </div>
+
+            <div>
+                <label for="">toa do tam</label>
+                x:<input type="number" name="x1" id="x1" value="150" min="0" max="700">
+                - y:<input type="number" name="y1" id="y1" value="150" min="0" max="500">
+            </div>
+
+            <div>
+                <label for="">ban kinh</label>
+                <input type="number" name="r" id="r" value="50" min="0" max="200">
+            </div>
+
+            <div>
+                <label for="">goc bat dau</label>
+                <input type="number" name="start" id="start" value="0" min="0" max="360">
+            </div>
+
+            <div>
+                <label for="">goc ket thuc</label>
+                <input type="number" name="end" id="end" value="360" min="0" max="360">
+            </div>
+
+            <div>
+                <label for="">thuan chieu kim dh</label>
+                <input type="checkbox" name="clock" id="clock" checked>
+            </div>
+
+            <div>
+                <button type="button" id="btn-draw">Ve cung tron</button>
+                <button type="button" id="btn-fill">To cung tron</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        //lay element canvas co id ='bangve'
+        let bangve = document.getElementById('bangve');
+
+        //tao doi tuong context
+        let ctx = bangve.getContext("2d");
+
+
+        //lap trinh cho su kien click cua button btn-draw
+        document.getElementById("btn-draw").onclick = function () {
+            ctx.beginPath();
+
+            //lay tam cua hinh tron
+            let x1 = document.getElementById("x1").value;
+            let y1 = document.getElementById("y1").value;
+
+            //lay ban kinh  cua hinh tron
+            let r = document.getElementById("r").value;
+
+            //lay goc bat dau va ket thuc cua cung tren hinh tron (radian)
+            let start = parseInt(document.getElementById("start").value)*Math.PI/180;
+            let end = parseInt(document.getElementById("end").value)*Math.PI/180;;
+
+            //lay gia tri chieu quay kim dong ho
+            let clock = document.getElementById("clock").checked; 
+
+            //lay mau ve
+            let color = document.getElementById("color").value;
+            ctx.strokeStyle = color;        // set mau cho duong ve
+
+            ctx.arc(x1, y1, r, start, end, clock);   // ve cung hinh tron 
+            ctx.stroke();
+        }
+
+
+
+        //lap trinh cho su kien click cua button btn-fill
+        document.getElementById("btn-fill").onclick = function () {
+            ctx.beginPath();
+
+            //lay tam cua hinh tron
+            let x1 = document.getElementById("x1").value;
+            let y1 = document.getElementById("y1").value;
+
+            //lay ban kinh  cua hinh tron
+            let r = document.getElementById("r").value;
+
+            //lay goc bat dau va ket thuc cua cung tren hinh tron (radian)
+            let start = parseInt(document.getElementById("start").value)*Math.PI/180;
+            let end = parseInt(document.getElementById("end").value)*Math.PI/180;;
+
+            //lay gia tri chieu quay kim dong ho
+            let clock = document.getElementById("clock").checked; 
+
+            //lay mau ve
+            let color = document.getElementById("color").value;
+            ctx.fillStyle = color;        // set mau cho duong ve
+
+            ctx.arc(x1, y1, r, start, end, clock);   // ve cung hinh tron 
+            ctx.fill();
+        }
+
+    </script>
+</body>
+
+</html>

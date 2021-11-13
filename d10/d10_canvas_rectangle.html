@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas-rectangle</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <style>
+        canvas {
+            background-color: ivory;
+            border: khaki groove medium;
+            box-shadow: lavender 3px 3px 3px;
+            float: left;
+        }
+
+        #div-form {
+            float: left;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Canvas Demo - Draw Rectangle</h2>
+    <hr>
+    <canvas width="700" height="500" id="bangve">
+
+    </canvas>
+
+    <div id="div-form">
+        <form action="">
+            <div>
+                <label for="">chon mau: </label>
+                <input type="color" name="color" id="color" value="#FF0000">
+            </div>
+
+            <div>
+                <label for="">diem bat dau</label>
+                x:<input type="number" name="x1" id="x1" value="40" min="0" max="700">
+                - y:<input type="number" name="y1" id="y1" value="40" min="0" max="500">
+            </div>
+
+            <div>
+                <label for="">chieu rong - cao</label>
+                w:<input type="number" name="w" id="w" value="400" min="0" max="700">
+                - h:<input type="number" name="h" id="h" value="200" min="0" max="500">
+            </div>
+
+            <div>
+                <button type="button" id="btn-draw">Ve hinh CN</button>
+                <button type="button" id="btn-fill">To mau hinh CN</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        //lay element canvas co id ='bangve'
+        let bangve = document.getElementById('bangve');
+
+        //tao doi tuong context
+        let ctx = bangve.getContext("2d");
+
+
+        //lap trinh cho su kien click cua button btn-draw
+        document.getElementById("btn-draw").onclick = function () {
+            ctx.beginPath();
+
+            //lay toa do dinh cua HCN
+            let x1= document.getElementById("x1").value;
+            let y1= document.getElementById("y1").value;
+            
+            //lay chieu rong va chieu cao cua HCN
+            let w= document.getElementById("w").value;
+            let h= document.getElementById("h").value;
+            
+            //lay mau ve
+            let color = document.getElementById("color").value;
+            ctx.strokeStyle = color;        // set mau cho duong ke
+
+            ctx.strokeRect(x1, y1, w, h);   // ve hinh chu nhat 
+        }
+
+        //lap trinh cho su kien click cua button btn-fill
+        document.getElementById("btn-fill").onclick = function () {
+            ctx.beginPath();
+
+            //lay toa do dinh cua HCN
+            let x1= document.getElementById("x1").value;
+            let y1= document.getElementById("y1").value;
+            
+            //lay chieu rong va chieu cao cua HCN
+            let w= document.getElementById("w").value;
+            let h= document.getElementById("h").value;
+            
+            //lay mau ve
+            let color = document.getElementById("color").value;
+            ctx.fillStyle = color;        // set mau cho duong ke
+
+            ctx.fillRect(x1, y1, w, h);   // ve hinh chu nhat 
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas-line</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <style>
+        canvas {
+            background-color: ivory;
+            border: khaki groove medium;
+            box-shadow: lavender 3px 3px 3px;
+            float: left;
+        }
+
+        #div-form {
+            float: left;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Canvas Demo</h2>
+    <hr>
+    <canvas width="700" height="500" id="bangve">
+
+    </canvas>
+
+    <div id="div-form">
+        <form action="">
+            <div>
+                <label for="">chon mau: </label>
+                <input type="color" name="color" id="color" value="#FF0000">
+            </div>
+
+            <div>
+                <label for="">Diem bat dau</label>
+                x:<input type="number" name="x1" id="x1" value="0" min="0" max="700">
+                - y:<input type="number" name="y1" id="y1" value="0" min="0" max="500">
+            </div>
+
+            <div>
+                <label for="">Diem ket thuc</label>
+                x:<input type="number" name="x2" id="x2" value="700" min="0" max="700">
+                - y:<input type="number" name="y2" id="y2" value="500" min="0" max="500">
+            </div>
+
+            <div>
+                <button type="button" id="btn-draw">Ve duong thang</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        //lay element canvas co id ='bangve'
+        let bangve = document.getElementById('bangve');
+
+        //tao doi tuong context
+        let ctx = bangve.getContext("2d");
+
+
+        //lap trinh cho su kien
+        document.getElementById("btn-draw").onclick = function () {
+            ctx.beginPath();
+
+            let x1= document.getElementById("x1").value;
+            let y1= document.getElementById("y1").value;
+            ctx.moveTo(x1,y1);        // dat but ve den diem dau tien cua duong thang (toa do goc cua bang ve)
+
+            
+            let x2= document.getElementById("x2").value;
+            let y2= document.getElementById("y2").value;
+            ctx.lineTo(x2, y2);   // dat but ve den diem ket thuc cua duong thang
+
+            //lay mau ve
+            let color = document.getElementById("color").value;
+            ctx.strokeStyle = color;// set mau cho duong ke
+            ctx.stroke();           // ve duong thang 
+        }
+
+    </script>
+</body>
+
+</html>

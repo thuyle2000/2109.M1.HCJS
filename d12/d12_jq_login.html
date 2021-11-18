@@ -5,31 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bs-login</title>
-    
+    <title>js-login</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <style>
-        input:required {
-            border-bottom: red medium solid;
-        }
-    </style>
 </head>
 
 <body>
-
     <div class="container">
         <div class="card-header">
-            <h2>Login <small>(Bootstrap) </small></h2>
+            <h2>Login <small>(Bootstrap - jQuery) </small></h2>
         </div>
 
         <div class="row">
             <!-- khoi chua form login chiem 4 cot doi voi man hinh medium, 6 cot voi man hinh small -->
             <div class="col-sm-6 col-md-4">
-                <form action="" method="get">
+                <form action="" method="get" id="form-login">
                     <fieldset>
                         <legend>Login</legend>
                         <div class="form-group">
@@ -60,7 +54,32 @@
         </div>
     </div>
 
+    <script>
+        $(document).ready(
+            function () {
+                //lap trinh cho event submit cua form co id='form-login'
+                $('#form-login').submit(function () {
+                    //lay du lieu trong o username
+                    let uid = $("#user").val();
+                    let pwd = $("#pass").val();
 
+                    if(uid=="aptech" && pwd=="123"){
+                        alert(`Xin chao, Mr/Ms. ${uid} !`);                       
+                    }
+                    else{
+                        alert(`Tai khoan ko hop le ! Vui long nhap lai !`);
+                        $("#user").focus();
+                        return false;
+                    }
+                }
+                );
+
+
+
+            }
+        );
+
+    </script>
 
 </body>
 

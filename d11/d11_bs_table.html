@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bs-table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        /* .table-danger,
+        .table-danger>td,
+        .table-danger>th {
+            background-color: royalblue;
+            color: wheat;
+        } */
+        .table-danger,
+        .table-danger tbody+tbody,
+        .table-danger td,
+        .table-danger th,
+        .table-danger thead th {
+            background-color: green;
+            color: whitesmoke;
+            border-color: green;
+        }
+
+        .hinh{
+            width: 95%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-7">
+                <h2>Table Demo</h2>
+                <hr>
+
+                <h4>Danh Muc San Pham</h4>
+                <table class="table table-bordered table-striped table-hover">
+                    <thead class="table table-danger">
+                        <tr>
+                            <th>stt</th>
+                            <th>ma sp</th>
+                            <th>ten san pham</th>
+                            <th>don gia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>P01</td>
+                            <td>Bun bo hue</td>
+                            <td>45000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>P02</td>
+                            <td>Com tam suon bi cha</td>
+                            <td>50000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>P03</td>
+                            <td>Banh gio</td>
+                            <td>50000</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-5">
+                <img src="../images/vn-foods/Bun-Bo-Hue.png" alt="" class="hinh">
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

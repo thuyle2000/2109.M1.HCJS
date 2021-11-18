@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq-form-register</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+
+    <style>
+        form {
+            float: left;
+        }
+
+        #summary {
+            float: left;
+            margin: 20px;
+            padding: 10px;
+            border: rosybrown solid thin;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>jQuery - Form Demo</h2>
+    <hr>
+    <form action="../d05/d05_form_login2.html" method="get" id="form-dk">
+        <fieldset>
+            <legend>Register New Member</legend>
+            <div>
+                <label for="">Username</label>
+                <input type="text" name="user" id="user" value="thanhsang" required placeholder="nhap ma tai khoan"
+                    autofocus>
+                <span style="color: red; padding-left: 0px; margin-left: 0px;">*</span>
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="password" name="pass" id="pass" required value="123">
+            </div>
+
+            <div>
+                <label for="">Email</label>
+                <input type="email" name="email" id="email" value="sang@gmail.com">
+            </div>
+
+            <div>
+                <label for="">Birthday</label>
+                <input type="date" name="dob" id="dob" value="2003-11-27" max="2006-01-01" required>
+            </div>
+
+            <div>
+                <label for="">Phone</label>
+                <input type="tel" name="phone" id="phone" value="12-1234567" pattern="\d{2}-\d{7}">
+                <!-- \d:digit - ky so tu 0-9 , {2}, lap lai 2 lan -->
+            </div>
+
+            <div>
+                <label for="">City</label>
+                <select name="city" id="city">
+                    <option value="SG">Saigon</option>
+                    <option value="HU">Hue</option>
+                    <option value="HN">Hanoi</option>
+                    <option value="CT" selected>Cantho</option>
+                    <option value="DN">Danang</option>
+                    <option value="HP">Haiphong</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Gender</label>
+                <input type="radio" name="gender" id="gender_male" value="male"> Male
+                <input type="radio" name="gender" id="gender_female" value="female" checked> Female
+                <input type="radio" name="gender" id="gender_other" value="other"> Other
+            </div>
+
+            <div>
+                <label for="">Favorite Language</label>
+                <input type="checkbox" name="lang" id="lang_1" value="C/C++" checked class="nn"> C/C++
+                <input type="checkbox" name="lang" id="lang_2" value="Java" checked class="nn"> Java
+                <input type="checkbox" name="lang" id="lang_3" value="Python" class="nn"> Python
+            </div>
+            <div>
+                <label for="">Favorite color</label>
+                <input type="color" name="color" id="color" value="#FF0000">
+            </div>
+
+            <div>
+                <label for="">Rate</label>
+                <input type="number" name="rate" id="rate" value="5" min="1" max="5" required />
+            </div>
+            <div>
+                <label for="">Comment</label>
+                <textarea name="comment" id="comment" cols="30" rows="4" placeholder="Input your comments"></textarea>
+            </div>
+
+        </fieldset>
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+    <!-- khoi hien thi tong hop cac thong tin dang ky -->
+    <div id="summary"></div>
+
+    <!-- load thu vien jQuery tren mang CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            //lap trinh cho su kien submit cua form co id='form-dk'
+            $("#form-dk").submit(function (e) {
+                e.preventDefault(); //vo hieu chuyen trang action
+
+
+                let a = ["=== Thong tin ca nhan ==="];
+
+                let user = $("#user").val();        //lay du lieu cua o user
+                a.push(`user name: ${user}`);
+
+                let email = $("#email").val();      //lay du lieu cua o email
+                a.push(`email: ${email}`);
+
+                let dob = $("#dob").val();          //lay du lieu cua o dob
+                a.push(`ngay sinh: ${dob}`);
+
+                let phone = $("#phone").val();      //lay du lieu cua o phone
+                a.push(`so dien thoai: ${phone}`);
+
+                let city = $("#city").val();      //lay du lieu cua o city
+                a.push(`Tinh/TP: ${city}`);
+
+                let gender = $("input[name=gender]:checked").val();  //lay du lieu cua nhom radio button gender
+                a.push(`gioi tinh: ${gender}`);
+
+                //cach 2 - ap dung khi tren form chi co 1 nhom radio button duy nhat
+                // let gender2 = $(":radio:checked").val();  //lay du lieu cua nhom radio button gender
+                // a.push(`gioi tinh2: ${gender2}`);
+
+
+                //lay du lieu cua nhom checkbox nn
+                let lang = [];
+                $("input[name=lang]:checked").each(function () {
+                    lang.push($(this).val());
+                });
+                a.push(`ngoai ngu: ${lang.join(", ")}`);
+                
+
+                let color = $("#color").val();      //lay du lieu cua o color
+                a.push(`mau sac: ${color}`);
+
+                let rate = $("#rate").val();      //lay du lieu cua o rate
+                a.push(`xep hang: ${rate}`);
+
+
+                //======================================
+                //xuat thong tin dang ky 
+                //======================================
+
+                //cach 1. in thong tin dang ky ra 1 hop thong bao
+                alert(a.join("\n"));
+
+                //cach 2. dua thong tin dang ky vo o text-area id="comment"
+                $("#comment").val(a.join("\n"));
+
+                //cach 3. dua thong tin dang ky vo khoi co id="summary"
+                $("#summary").html(a.join("<br>"));
+
+                //cach 4. dua thong tin dang ky vo cua so tab moi tren trinh duyet
+                let new_win = window.open();
+                new_win.document.write("<pre>");
+                new_win.document.write(a.join("<br>"));
+                new_win.document.write("</pre>");
+
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
